@@ -1,3 +1,4 @@
+import { billingRoutes } from "./modules/billing/billing.routes.ts";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { auth } from "@orkide/auth";
 import { except } from "hono/combine";
@@ -42,6 +43,7 @@ const routes = app
   .route("/", taxonomyRoutes)
   .route("/", mediaRoutes)
   .route("/", contactRoutes)
+  .route("/", billingRoutes)
   .route("/", statsRoutes);
 
 registerOpenApi(app);
